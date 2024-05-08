@@ -39,7 +39,7 @@ log = logging.getLogger(__name__)
 
 1. Data Ingestion 
 
-    - Define Path of the config files under the ```` src/housing/constants/__init__.py ```
+    - Define Path of the config files under the *** src/housing/constants/__init__.py ***
         ```
         CONFIG_FILE_PATH = Path("config/config.yaml")
         PARAMS_FILE_PATH = Path("params.yaml")
