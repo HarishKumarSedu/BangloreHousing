@@ -1,0 +1,12 @@
+COLUMNS:
+  area_type   :  object 
+  availability:  object 
+  location    :  object 
+  size        :  object 
+  society     :  object 
+  total_sqft  :  object 
+  bath        :  float64
+  balcony     :  float64
+
+TARGET:
+  price       :  float64

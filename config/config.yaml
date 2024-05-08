@@ -5,4 +5,7 @@ data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: amitabhajoy/bengaluru-house-price-data
   local_data_file: artifacts/data_ingestion/Bengaluru_House_Data.csv
-  unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  status_file: statusfile.json
