@@ -58,12 +58,12 @@ log = logging.getLogger(__name__)
             from kaggle import api 
             api.dataset_download_files(self.config.data_ingestion.source_URL, path=self.config.data_ingestion.root_dir, unzip=True)
             ``` 
-2. Data Validation
+2. *** Data Validation ***
 
     In data validation mainly I am checking the dataset columns and dataset columns type; this test is higly customizeable and the pipeline completely depends on the user dataset 
 
     - Columns validation  code logic
-        - Column names and type will be pre-defined in the schema.yaml file 
+        - Column names and type will be pre-defined inside schema.yaml file 
             ```
             COLUMNS:
                 area_type   :  object 
