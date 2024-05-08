@@ -27,12 +27,12 @@ log = logging.getLogger(__name__)
 <h3> Data Pipelines </h3>
 <ol>
 <li> data Ingestion </li>
-* data Validation 
-* data Transformation 
-* Model Training 
-* Model Evaluvating 
-* CI 
-* CT 
-* CD 
-* CI-CT-CD 
+<li> data Validation </li>
+<li> data Transformation </li>
+<li> Model Training </li>
+<li> Model Evaluvating </li>
+<li> CI </li>
+<li> CT </li>
+<li> CD </li>
+<li> CI-CT-CD </li>
 </ol>
