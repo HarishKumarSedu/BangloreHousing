@@ -34,7 +34,8 @@ class DataValidation:
             else:
                 log.info(f'Data Column - {column} - Validation Passed Successfully')
                 columnsValidation_status = True
-                
+        
+        # write the status file with columndata validation status 
         with open(os.path.join(self.data_validation.root_dir, self.data_validation.status_file),'w') as file:
             json.dump({"columnValidation":columnsValidation_status},file, )
                 

@@ -47,7 +47,7 @@ log = logging.getLogger(__name__)
         ```
 
     - define the download_data inside the ``` components/data_ingestion/DataIngestion``` 
-        - download data from kaggle, to do that you can take help of kaggle library ``` pip install kaggle ```. when you import kaggle library by default it expect to authenticate with you kaggle api credentials so before importing the kaggle library  define the kaggle authentication  varaibles ```{"username":"username","key":"key"}``` in os environment form filerepo ``` kaggle/kaggle.json ``` 
+        - download data from kaggle, to do that you can take help of kaggle library ``` pip install kaggle ```. when you import kaggle library by default it expect to authenticate with you're kaggle api credentials, so before importing the kaggle library  define the kaggle authentication  varaibles ```{"username":"username","key":"key"}``` in os environment -> form filerepo ``` kaggle/kaggle.json ``` 
 
             ```         
             with open(self.kaggle_auth_filepath, 'r') as file :
@@ -58,3 +58,37 @@ log = logging.getLogger(__name__)
             from kaggle import api 
             api.dataset_download_files(self.config.data_ingestion.source_URL, path=self.config.data_ingestion.root_dir, unzip=True)
             ``` 
+2. Data Validation
+
+    In data validation mainly I am checking the dataset columns and dataset columns type; this test is higly customizeable and the pipeline completely depends on the user dataset 
+
+    - Columns validation  code logic
+        - Column names and type will be pre-defined in the schema.yaml file 
+            ```
+            COLUMNS:
+                area_type   :  object 
+                availability:  object 
+                location    :  object 
+                size        :  object 
+                society     :  object 
+                total_sqft  :  object 
+                bath        :  float64
+                balcony     :  float64
+
+            TARGET:
+              price       :  float64
+              ```
+        ``` 
+        for index,column in enumerate(dataset.columns.to_list()):
+            # match the column and column type in the dataset 
+            if  list(shcema_data.keys())[index] != column and list(shcema_data.values())[index] != dataset[column].dtype:
+                log.error(f'Column {column} in the dataset not matching ... Data Columns Validation Failed')
+                columnsValidation_status = False
+            else:
+                log.info(f'Data Column - {column} - Validation Passed Successfully')
+                columnsValidation_status = True
+        
+        # write the status file with columndata validation status 
+        with open(os.path.join(self.data_validation.root_dir, self.data_validation.status_file),'w') as file:
+            json.dump({"columnValidation":columnsValidation_status},file, )
+        ```
