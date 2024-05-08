@@ -24,3 +24,13 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 ```
+<h3> Data Pipelines </h3>
+* data Ingestion 
+* data Validation 
+* data Transformation 
+* Model Training 
+* Model Evaluvating 
+* CI 
+* CT 
+* CD 
+* CI-CT-CD 
