@@ -25,6 +25,7 @@ log = logging.getLogger(__name__)
 
 ```
 <h3> Data Pipelines </h3>
+<ul>
 * data Ingestion 
 * data Validation 
 * data Transformation 
@@ -34,3 +35,4 @@ log = logging.getLogger(__name__)
 * CT 
 * CD 
 * CI-CT-CD 
+</ul>
