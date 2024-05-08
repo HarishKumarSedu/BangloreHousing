@@ -36,3 +36,12 @@ log = logging.getLogger(__name__)
 <li> CD </li>
 <li> CI-CT-CD </li>
 </ol>
+
+1. Data Ingestion 
+
+    - Define Path of the config files under the ```` src/housing/constants/__init__.py ```
+        ```
+        CONFIG_FILE_PATH = Path("config/config.yaml")
+        PARAMS_FILE_PATH = Path("params.yaml")
+        SCHEMA_FILE_PATH = Path("schema.yaml") 
+        ```
