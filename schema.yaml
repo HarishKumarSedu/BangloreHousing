@@ -10,3 +10,7 @@ COLUMNS:
 
 TARGET:
   price       :  float64
+
+NEWFEATURES:
+  BHK: bhk
+  PPS: price_per_sqft
