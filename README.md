@@ -37,7 +37,7 @@ log = logging.getLogger(__name__)
 <li> CI-CT-CD </li>
 </ol>
 
-1. Data Ingestion 
+1. ***Data Ingestion*** 
 
     - Define Path of the config files under the *** src/housing/constants/__init__.py ***
         ```
