@@ -45,3 +45,15 @@ log = logging.getLogger(__name__)
         PARAMS_FILE_PATH = Path("params.yaml")
         SCHEMA_FILE_PATH = Path("schema.yaml") 
         ```
+
+    - define the download_data inside the ``` components/data_ingestion/DataIngestion``` 
+        - data will downloading from the kaggle define the kaggle authentication ``` kaggle/kaggle.json ``` before you import the kaggle library 
+            ```         
+            with open(self.kaggle_auth_filepath, 'r') as file :
+            kaggle_auth = json.load(file)
+            
+            os.environ['KAGGLE_USERNAME'] = kaggle_auth.get('username')
+            os.environ['KAGGLE_KEY'] = kaggle_auth.get('key')
+            from kaggle import api 
+            api.dataset_download_files(self.config.data_ingestion.source_URL, path=self.config.data_ingestion.root_dir, unzip=True)
+            ``` 
