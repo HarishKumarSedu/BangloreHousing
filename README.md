@@ -47,7 +47,8 @@ log = logging.getLogger(__name__)
         ```
 
     - define the download_data inside the ``` components/data_ingestion/DataIngestion``` 
-        - data will downloading from the kaggle define the kaggle authentication ``` kaggle/kaggle.json ``` before you import the kaggle library 
+        - download data from kaggle, for importing the kaggle library  define the kaggle authentication  varaibles ```{"username":"username","key":"key"}``` ``` kaggle/kaggle.json ``` before you import the kaggle library 
+        
             ```         
             with open(self.kaggle_auth_filepath, 'r') as file :
             kaggle_auth = json.load(file)
