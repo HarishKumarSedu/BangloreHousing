@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 ```
 <h3> Data Pipelines </h3>
 <ul>
-* data Ingestion 
+<li> data Ingestion </li>
 * data Validation 
 * data Transformation 
 * Model Training 
