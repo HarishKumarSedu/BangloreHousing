@@ -14,3 +14,13 @@ TARGET:
 NEWFEATURES:
   BHK: bhk
   PPS: price_per_sqft
+
+DROPCOLUMNS:
+  location      :  location
+  area_type     :  area_type   
+  availability  :  availability   
+  size          :  size        
+  society       :  society              
+  price_per_sqft:  price_per_sqft
+  balcony       :  balcony
+  price         :  price 
